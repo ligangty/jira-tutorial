@@ -8,9 +8,6 @@
     <artifactId>jira-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Jira-Tutorial: Parent</name>
-    <description>
-        POC project to test custom fields
-    </description>
     <packaging>pom</packaging>
 
     <organization>
@@ -47,12 +44,14 @@
                 <groupId>com.atlassian.jira</groupId>
                 <artifactId>jira-api</artifactId>
 		<version>${jira.version}</version>
+		<!--
 		<exclusions>
 		  <exclusion>
 	            <groupId>jta</groupId>
 		    <artifactId>jta</artifactId>
 		  </exclusion>
 		</exclusions>
+                -->
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -76,21 +75,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
     <modules>
       <module>helloworld</module>
@@ -117,7 +101,7 @@
                         <productDataVersion>${jira.version}</productDataVersion>
                         <shutdownTimeout>60000</shutdownTimeout>
                         <offline>true</offline>
-                    </configuration>
+		    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
